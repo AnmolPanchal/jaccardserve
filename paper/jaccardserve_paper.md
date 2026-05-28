@@ -1,8 +1,7 @@
 # JaccardServe: Cross-Request Prefill Acceleration in LLM Serving via MinHash-LSH Token Shingling
 
 **Anmol Sureshkumar Panchal**
-*[Affiliation]*
-*[Email]*
+
 
 ---
 
