@@ -2,7 +2,6 @@
 
 **Anmol Sureshkumar Panchal**
 
-
 ---
 
 ## Abstract
@@ -214,7 +213,7 @@ The SemShareKV comparison in this section is run against a **matching-layer simu
 
 We sweep true Jaccard from 0.10 to 0.95 in 0.05 steps, with 100 trials per point, and measure the empirical candidate-collision rate of banded LSH at (b=20, r=4). Figure 1 plots the result against the theoretical curve P(s; b, r) = 1 − (1 − s^r)^b. All 18 measured points fall within binomial standard error of the curve. The S-curve has its transition centered at s ≈ 0.47, which matches the operational threshold τ = 0.5 used in the balanced configuration.
 
-![Figure 1: S-curve](figures/fig1_s_curve.png)
+![Figure 1: S-curve](../figures/fig1_s_curve.png)
 
 ### 7.3 Templated-chat benchmark (n = 500)
 
@@ -248,11 +247,11 @@ The benchmark generates 320 prompts from 20 topic groups. Each group has 8 sourc
 
 Figure 2 shows the same data as a bar chart. JaccardServe at the balanced operating point achieves a 70.9% hit rate (3.6× vLLM APC, 12× SemShareKV-sim). At the high-recall point the hit rate rises to 75.9% at marginal cost (~0.5 ms additional overhead).
 
-![Figure 2: Hit rate comparison](figures/fig2_hit_rate_comparison.png)
+![Figure 2: Hit rate comparison](../figures/fig2_hit_rate_comparison.png)
 
 The mean Jaccard of declared matches at the balanced configuration is 0.609, indicating the average match shares about 60% of its token shingles with its donor. Mean span coverage is 0.386, indicating that on average 38.6% of the target prompt's tokens are covered by the contiguous matched span — this is the upper bound on per-request prefill savings achievable via KV reuse. The full distributions are shown in Figure 4.
 
-![Figure 4: Match distributions](figures/fig4_match_distributions.png)
+![Figure 4: Match distributions](../figures/fig4_match_distributions.png)
 
 The distributions are bimodal at the balanced operating point: most matches sit near the threshold (J ≈ 0.55, span coverage ≈ 0.25) and a smaller mode at near-identity (J ≈ 0.9, span coverage ≈ 0.5 to 1.0) corresponding to prompts that share the same template and document subset modulo reordering. The high-precision configuration shifts the mass entirely to the high-Jaccard mode.
 
@@ -270,7 +269,7 @@ For the multi-document summarization workload, each prompt is labeled with its g
 
 Figure 3 plots precision against recall with F1 contours overlaid. The other methods cluster in the high-precision/low-recall corner; only JaccardServe at the balanced and high-recall configurations reaches the high-F1 region.
 
-![Figure 3: Precision-recall](figures/fig3_precision_recall.png)
+![Figure 3: Precision-recall](../figures/fig3_precision_recall.png)
 
 All methods achieve precision above 0.87 — they do not match incompatible prompts. The differentiator is recall. vLLM APC misses 80% of reusable matches because exact block hashing cannot tolerate the per-document substitution in this workload. The SemShareKV simulator misses 94% of reusable matches because synthetic embedding proxies do not carry the semantic structure that the real SemShareKV exploits; real SemShareKV on a real model would likely score higher here, but the gap to JaccardServe's recall of 80.6% is unlikely to close given the predominantly lexical nature of the workload.
 
@@ -278,7 +277,7 @@ All methods achieve precision above 0.87 — they do not match incompatible prom
 
 Figure 5 shows hit rate as a function of (number of bands, rows per band) at fixed threshold τ = 0.5 on a 200-prompt subset of the multi-doc workload.
 
-![Figure 5: (b, r) heatmap](figures/fig5_br_heatmap.png)
+![Figure 5: (b, r) heatmap](../figures/fig5_br_heatmap.png)
 
 Hit rate rises monotonically with the number of bands and falls monotonically with rows per band, as expected from the S-curve formula. The (b=20, r=4) operating point at 0.70 hit rate is a good cost-quality compromise; higher b values reach 0.70 with diminishing returns and proportional overhead increases. At (b=80, r=4) the hit rate saturates at 0.70 — adding more bands cannot raise recall beyond what the underlying similarity structure of the workload allows.
 
