@@ -1,0 +1,4 @@
+workload,policy,model,n,median_ms,p99_ms,mean_ms,min_ms,max_ms
+multi_doc_summ,no_cache,Qwen/Qwen2.5-3B-Instruct,200,24.08,26.75,24.58,22.91,121.28
+multi_doc_summ,apc_only,Qwen/Qwen2.5-3B-Instruct,200,25.89,28.66,26.1,17.72,117.95
+multi_doc_summ,js_apc,Qwen/Qwen2.5-3B-Instruct,200,24.01,28.08,24.06,15.46,95.13

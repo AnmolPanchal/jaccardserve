@@ -1,0 +1,8 @@
+method,config,hit_rate,avg_overhead_ms,avg_candidates,n
+vLLM_APC,block=16,0.052000,0.0216,-,500
+SemShareKV_sim,low_planes=64_tables=10_thr=0.8,0.220000,0.6462,0.31,500
+SemShareKV_sim,medium_planes=128_tables=20_thr=0.85,0.010000,2.2945,0.01,500
+SemShareKV_sim,high_planes=128_tables=40_thr=0.9,0.012000,4.4307,0.01,500
+JaccardServe,balanced_b=20_r=4_thr=0.5_k=5,0.972000,0.3516,69.49,500
+JaccardServe,high-prec_b=20_r=8_thr=0.7_k=5,0.432000,0.2371,3.78,500
+JaccardServe,high-recall_b=50_r=4_thr=0.4_k=5,0.988000,0.4115,87.02,500

@@ -1,0 +1,4 @@
+numpy>=1.24
+# Optional: only needed if using a real LLM tokenizer.
+# Comment out if you only want to run the whitespace fallback.
+transformers>=4.40

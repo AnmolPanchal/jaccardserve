@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv*/
+*.egg-info/
+.eggs/
+*.log
+.DS_Store
+.venv_gpu/

@@ -1,0 +1,6 @@
+method,config,TP,FP,FN,TN,precision,recall,F1
+vLLM_APC,block=16,55,8,222,35,0.8730,0.1986,0.3235
+SemShareKV_sim,medium_planes=128_tables=20_thr=0.85,18,1,262,39,0.9474,0.0643,0.1204
+JaccardServe,balanced_b=20_r=4_thr=0.5_k=5,202,25,69,24,0.8899,0.7454,0.8112
+JaccardServe,high-prec_b=20_r=8_thr=0.7_k=5,39,2,240,39,0.9512,0.1398,0.2437
+JaccardServe,high-recall_b=50_r=4_thr=0.4_k=5,220,23,53,24,0.9053,0.8059,0.8527

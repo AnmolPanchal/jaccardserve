@@ -1,0 +1,4 @@
+workload,policy,model,n,median_ms,p99_ms,mean_ms,min_ms,max_ms
+templated_chat,no_cache,Qwen/Qwen2.5-3B-Instruct,200,18.73,23.88,18.18,10.98,179.84
+templated_chat,apc_only,Qwen/Qwen2.5-3B-Instruct,200,13.98,176.87,198.32,10.7,36410.02
+templated_chat,js_apc,Qwen/Qwen2.5-3B-Instruct,200,10.47,128.72,13.19,9.71,165.56
